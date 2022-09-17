@@ -1,0 +1,134 @@
+.one {
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+  padding: 20px;
+  background-color: aliceblue;
+  width: 600px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.one::first-letter {
+  color: red;
+}
+
+.one:after {
+  position: absolute;
+  background-image: linear-gradient(to right, red, green);
+  content: "";
+  top: -10px;
+  left: -10px;
+  width: 660px;
+  height: 84px;
+  z-index: -2;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 16px);
+}
+
+.two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: orangered;
+  font-weight: bold;
+  background-color: rgb(227, 226, 226);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.two::after {
+  position: absolute;
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  border: solid 0px transparent;
+  border-radius: 50%;
+  z-index: -1;
+  content: "";
+  left: -6px;
+  top: 0;
+}
+
+.two::before {
+  position: absolute;
+  background-color: orangered;
+  width: 100px;
+  height: 100px;
+  border: solid 0px transparent;
+  border-radius: 50%;
+  z-index: -1;
+  content: "";
+  left: 6px;
+  top: 0;
+}
+
+/* .page {
+  display: flex;
+  flex-flow: column wrap;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 25px;
+  height: calc(100vh - 16px);
+}
+
+.header {
+  display: flex;
+  flex-flow: row;
+}
+
+.logo {
+  background-color: rgb(169, 163, 163);
+  padding: 20px;
+  margin: 10px;
+}
+
+.links {
+  background-color: rgb(169, 163, 163);
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.links li {
+  padding: 20px;
+}
+
+.main-area {
+  display: flex;
+  flex-grow: 1;
+}
+
+.main-area .content {
+  width: 75%;
+  background-color: rgb(169, 163, 163);
+  margin: 10px;
+  padding: 20px;
+}
+
+.main-area .sidebar {
+  width: 25%;
+  background-color: rgb(169, 163, 163);
+  margin: 10px;
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  background-color: rgb(169, 163, 163);
+  margin: 10px;
+  justify-content: space-between;
+  padding: 20px;
+} */

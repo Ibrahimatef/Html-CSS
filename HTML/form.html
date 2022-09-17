@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trial Form</title>
+  </head>
+  <body>
+    <form action="" method="GET">
+      <div>
+        <label>Name: </label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter Your Name"
+          autofocus
+        />
+      </div>
+      <br />
+      <div>
+        <label>Passowrd: </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Your Passowrd"
+          minlength="10"
+          maxlength="20"
+        />
+      </div>
+      <hr />
+      <div>
+        <input id="win" type="radio" name="os" value="Windows" />
+        <label for="win">Windows</label>
+      </div>
+      <div>
+        <input id="mac" type="radio" name="os" value="Mac" />
+        <label for="mac">Mac</label>
+      </div>
+      <div>
+        <input id="lin" type="radio" name="os" value="Linux" />
+        <label for="lin">Linux</label>
+      </div>
+      <div>
+        <input type="submit" />
+        <input type="reset" />
+      </div>
+
+      <div>
+        <input id="win1" type="checkbox" name="os" value="Windows" />
+        <label for="win1">Windows</label>
+      </div>
+      <div>
+        <input id="mac1" type="checkbox" name="os" value="Mac" />
+        <label for="mac1">Mac</label>
+      </div>
+      <div>
+        <input id="lin1" type="checkbox" name="os" value="Linux" />
+        <label for="lin1">Linux</label>
+      </div>
+      <div>
+        <textarea name="subject" id="testarea" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+        <input type="submit" />
+        <input type="reset" />
+      </div>
+    </form>
+  </body>
+</html>

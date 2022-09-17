@@ -1,0 +1,38 @@
+body {
+  position: relative;
+  height: calc(100vh - 16px);
+}
+
+.parent {
+  position: absolute;
+  display: grid;
+  height: 300px;
+  width: 300px;
+  justify-content: center;
+  align-content: center;
+  grid-template: 200px / 200px;
+  background-color: #eee;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.child {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(186, 222, 210);
+  position: relative;
+}
+
+/* .child::after {
+  position: absolute;
+  content: "";
+  background-color: rgb(213, 147, 165);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  z-index: -1;
+} */

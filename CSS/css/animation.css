@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333;
+  /* position: relative; */
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+.animation {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: rgb(222 222 222);
+  animation-name: scaling;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /* z-index: 1; */
+  transform: scale(1, 1);
+  border-radius: 50%;
+  letter-spacing: 0px;
+  border: 2px solid rgb(176 22 54);
+  font-weight: bold;
+  animation-delay: 2s;
+  color: rgb(199 55 99);
+  box-shadow: 0 0 12px 0 rgb(231 3 121 / 97%);
+}
+
+.animation::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(243 85 152);
+  top: calc(50% - 6px);
+  left: calc(0% - 6px);
+  transform-origin: calc(50% + 51px) calc(50% + 1px);
+  transform: rotate(90deg);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation-name: rotating1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+}
+
+.animation::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(243 85 152);
+  top: calc(50% - 6px);
+  left: calc(0% - 6px);
+  transform-origin: calc(50% + 51px) calc(50% + 1px);
+  transform: rotate(90deg);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation-name: rotating1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse;
+  animation-delay: 2s;
+}
+
+@keyframes scaling {
+  0% {
+    transform: rotate(0deg) scale(1, 1);
+    letter-spacing: 0px;
+  }
+
+  50% {
+    transform: scale(1.2, 1.2);
+    letter-spacing: 2px;
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1, 1);
+    letter-spacing: 0px;
+  }
+}
+
+@keyframes rotating1 {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}
+
+.animation:hover,
+.animation:hover::after,
+.animation:hover::before {
+  animation-play-state: paused;
+}
+
+/* @keyframes rotating2 {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(-270deg);
+  }
+} */
+
+.test {
+  text-align: ;
+}

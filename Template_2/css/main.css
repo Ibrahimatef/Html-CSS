@@ -19,7 +19,6 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: black;
 }
 
 .special-heading h2 {
@@ -54,6 +53,7 @@ body {
   border-radius: 50%;
   background-color: white;
   z-index: 2;
+  transition: 0.5s;
 }
 
 .special-heading + p {
@@ -63,6 +63,10 @@ body {
   max-width: 100%;
   line-height: 2;
   color: #777;
+}
+
+.special-heading h2:hover::before {
+  background-color: var(--main-color);
 }
 
 .container {
@@ -296,6 +300,11 @@ header .container nav i:last-child {
 
   margin-left: 5px;
   margin-right: 5px;
+  transition: 0.5s;
+}
+
+.landing .bullets span:hover {
+  background-color: var(--main-color);
 }
 
 .landing .bullets span.active {
@@ -385,6 +394,7 @@ header .container nav i:last-child {
   position: relative;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .design::after {
@@ -394,7 +404,7 @@ header .container nav i:last-child {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0 0 0 / 80%);
+  background-color: rgb(0 0 0 / 60%);
 }
 
 .design .image {
@@ -508,4 +518,506 @@ header .container nav i:last-child {
 
 .portfolio .portfolio-content .images .box:hover img {
   transform: scale(1.1) rotate(2deg);
+}
+
+.awesome-video {
+  position: relative;
+}
+
+.awesome-video video {
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.awesome-video::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.awesome-video .text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  /* z-index: 1; */
+  padding: 50px;
+  background-color: var(--transparent-color);
+  color: white;
+}
+
+.awesome-video .text h2 {
+  margin: 0 0 30px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.awesome-video .text p {
+  margin-bottom: 30px;
+}
+
+.awesome-video .text button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .awesome-video .text {
+    padding: 30px;
+  }
+  .awesome-video .text h2 {
+    font-size: 16px;
+    margin: 0 0 15px;
+  }
+
+  .awesome-video .text p {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  .awesome-video .text button {
+    font-size: 10px;
+  }
+}
+
+.about-us {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: white;
+  position: relative;
+}
+
+.about-us + .container {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 200px;
+}
+
+.about-us img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .about-us + .container {
+    padding-bottom: 30px;
+  }
+  .about-us img {
+    top: 65%;
+    max-width: 90%;
+  }
+}
+
+.about-us .stats {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url("../images/stats.png");
+  position: relative;
+}
+
+.about-us .stats::before {
+  background-color: #000000b3;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.about-us .stats .container {
+  z-index: 1;
+  position: relative;
+  background-color: var(--transparent-color);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.about-us .stats .container .col {
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+.about-us .stats .col i {
+  background-color: black;
+  border-radius: 50%;
+  border: 10px solid black;
+  margin: 0 auto 30px;
+}
+
+.about-us .stats .col h3 {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+.about-us .stats .col p {
+  font-size: 14px;
+}
+
+.our-skills {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.our-skills .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-column-gap: 50px;
+}
+
+@media (max-width: 500px) {
+  .our-skills .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.our-skills .container .heading h3 {
+  margin: 0 0 30px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.our-skills .container .heading p {
+  color: #777;
+  line-height: 2;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.our-skills .container .box {
+  display: flex;
+  align-items: center;
+}
+
+.our-skills .container .box img {
+  border-radius: 50%;
+  width: 100px;
+  margin: 30px;
+}
+
+.our-skills .container .box .text {
+  flex: 1;
+  line-height: 1.8;
+  border-bottom: 1px solid #ccc;
+}
+
+.our-skills .container .box .text .name {
+  color: #777;
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.our-skills .container .section-one .bullets {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px;
+}
+
+.our-skills .container .section-one .bullets span {
+  border: 1px solid #777;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: 0.5s;
+}
+
+.our-skills .container .section-one .bullets span.active {
+  background-color: var(--main-color);
+}
+
+.our-skills .container .section-one .bullets span:hover {
+  background-color: var(--main-color);
+}
+
+.our-skills .container .skills .skill {
+  margin-bottom: 40px;
+}
+
+.our-skills .container .skills .skill h4 {
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.our-skills .skill .progress-one {
+  background-color: #dedadc;
+  height: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.our-skills .skill .progress-one::before {
+  content: "";
+  background-color: var(--main-color);
+  width: 90%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.our-skills .skill .progress-one::after {
+  content: "90%";
+  background-color: black;
+  color: white;
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+  left: 90%;
+  transform: translateX(-50%);
+  top: -120%;
+}
+.our-skills .skill .progress-two {
+  background-color: #dedadc;
+  height: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.our-skills .skill .progress-two::before {
+  content: "";
+  background-color: var(--main-color);
+  width: 85%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.our-skills .skill .progress-two::after {
+  content: "85%";
+  background-color: black;
+  color: white;
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+  left: 85%;
+  transform: translateX(-50%);
+  top: -120%;
+}
+.our-skills .skill .progress-three {
+  background-color: #dedadc;
+  height: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.our-skills .skill .progress-three::before {
+  content: "";
+  background-color: var(--main-color);
+  width: 80%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.our-skills .skill .progress-three::after {
+  content: "80%";
+  background-color: black;
+  color: white;
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+  left: 80%;
+  transform: translateX(-50%);
+  top: -120%;
+}
+.our-skills .skill .progress-four {
+  background-color: #dedadc;
+  height: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.our-skills .skill .progress-four::before {
+  content: "";
+  background-color: var(--main-color);
+  width: 90%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.our-skills .skill .progress-four::after {
+  content: "90%";
+  background-color: black;
+  color: white;
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+  left: 90%;
+  transform: translateX(-50%);
+  top: -120%;
+}
+
+.quote {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url("../images/quote.jpg");
+  position: relative;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.quote::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.quote .text {
+  position: relative;
+  z-index: 2;
+  margin: 50px 0;
+}
+
+.quote .text q {
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.pricing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.pricing .cols {
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+  text-align: center;
+}
+
+.pricing .cols .price {
+  padding: 40px 20px;
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .cols .price .type {
+  font-weight: normal;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.pricing .cols .price .number {
+  font-size: 60px;
+  font-weight: bold;
+  position: relative;
+}
+
+.pricing .cols .price .number::before {
+  content: "$";
+  font-size: 25px;
+  position: relative;
+  top: -40px;
+  margin-right: 15px;
+  font-weight: normal;
+}
+
+.pricing .cols .price .number::after {
+  content: "/Mo";
+  font-size: 20px;
+  position: relative;
+  right: -15px;
+}
+
+.pricing ul li {
+  padding: 20px;
+  position: relative;
+}
+
+.pricing ul li::after {
+  content: "";
+  height: 1px;
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+}
+
+.pricing button {
+  padding: 20px 20px;
+  border: 1px solid var(--main-color);
+  /* width: fit-content; */
+  margin: 30px auto;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.pricing button:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+
+.footer {
+  padding: 30px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/subscribe.jpg");
+  background-size: cover;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.footer .container {
+  position: relative;
+}
+
+.footer img {
+  margin-bottom: 20px;
+}
+
+.footer h3 {
+  text-transform: uppercase;
+  padding: 20px;
+  border-bottom: 1px solid white;
+  font-size: 22px;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.footer .icons i {
+  padding: 10px 15px;
+}
+
+.footer p {
+  margin-top: 60px;
 }

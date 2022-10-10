@@ -69,6 +69,11 @@ body {
   background-color: var(--main-color);
 }
 
+input:focus,
+textarea:focus {
+  outline: 1px solid var(--main-color);
+  /* outline: 0; */
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -700,6 +705,14 @@ header .container nav i:last-child {
   align-items: center;
 }
 
+@media (max-width: 767px) {
+  .our-skills .container .box {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .our-skills .container .box img {
   border-radius: 50%;
   width: 100px;
@@ -973,6 +986,173 @@ header .container nav i:last-child {
 .pricing button:hover {
   color: white;
   background-color: var(--main-color);
+}
+
+.subscribe {
+  background-image: url("../images/subscribe.jpg");
+  position: relative;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.subscribe::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.subscribe .container {
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subscribe .container form {
+  display: flex;
+  position: relative;
+  max-height: 60px;
+}
+
+.subscribe form input[type="email"] {
+  background-color: transparent;
+  padding: 20px 20px 20px 60px;
+  border: white 1px solid;
+  border-right: none;
+  color: white;
+  width: 350px;
+  caret-color: var(--main-color);
+}
+
+.subscribe form input[type="email"]::placeholder {
+  color: white;
+}
+
+.subscribe form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 6%;
+}
+
+.subscribe form input[type="submit"] {
+  background-color: var(--main-color);
+  padding: 20px;
+  border: white 1px solid;
+  border-left: none;
+  color: white;
+}
+
+.subscribe form input[type="email"]:focus,
+.subscribe form input[type="submit"]:focus {
+  outline: none;
+}
+
+.subscribe form input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.subscribe .container p {
+  padding-left: 50px;
+  line-height: 2;
+}
+
+@media (max-width: 767px) {
+  .subscribe .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .subscribe .container input[type="email"] {
+    width: calc(100% - 114px);
+  }
+
+  .subscribe .container p {
+    padding: 30px 10px 10px;
+  }
+}
+
+.contact-us {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.contact-us .content {
+  display: flex;
+  /* align-items: center; */
+}
+
+.contact-us .content .section-one {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  width: 70%;
+}
+
+.contact-us .content .section-one input:not([type="submit"]) {
+  padding: 20px;
+  margin: 10px;
+}
+
+.contact-us .content .section-one textarea {
+  padding: 20px;
+  margin: 10px;
+  height: 200px;
+}
+
+.contact-us input[type="submit"] {
+  padding: 20px;
+  margin: 10px;
+  align-self: flex-end;
+  color: white;
+  background-color: var(--main-color);
+  border: white;
+}
+
+.contact-us .section-two {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-us .section-two .heading-one,
+.contact-us .section-two .heading-two {
+  /* padding: 20px; */
+  margin: 10px;
+  height: 30%;
+}
+
+.contact-us .section-two .heading-one h4,
+.contact-us .section-two .heading-two h4 {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.contact-us .section-two .heading-one p,
+.contact-us .section-two .heading-two p {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .contact-us .content {
+    flex-direction: column;
+    /* align-items: center; */
+  }
+  .contact-us .content .section-one {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 .footer {

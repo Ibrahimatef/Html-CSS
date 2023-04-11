@@ -2,8 +2,12 @@
   --main-transition: 0.7s;
 }
 
-::-webkit-scrollbar {
-  width: 0;
+.smooth {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.smooth::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 /* Start Global Rules */
@@ -156,7 +160,8 @@ h1 {
 }
 
 @media (max-width: 992px) {
-  .social-media {
+  .social-media,
+  .scroll-dots {
     display: none;
   }
 }

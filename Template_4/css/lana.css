@@ -112,6 +112,7 @@ h1 {
   width: 100%;
   z-index: 30;
   background-color: transparent;
+  animation: bounceInDown 1.5s;
 }
 
 .header-with-scroll {

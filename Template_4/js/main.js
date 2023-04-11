@@ -5,7 +5,9 @@ let ourMission = document.getElementById("ourMission");
 let whatWeDo = document.getElementById("whatWeDo");
 let marketSolution = document.getElementById("marketSolution");
 let contactUs = document.getElementById("contactUs");
+let ourWork = document.getElementById("ourWork");
 let headerLinks = Array.from(document.querySelectorAll(".header ul li"));
+let threshold = window.innerWidth < 768 ? 0 : 1;
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -23,7 +25,6 @@ const observer = new IntersectionObserver(
             "showup 1s ease-in-out forwards";
           document.querySelector("#ourMission p").style.animation =
             "showup 1s 0.7s ease-in-out forwards";
-          observer.unobserve(entry.target);
         } else if (entry.target.id === "whatWeDo") {
           document.getElementById("whatWeDoHeader").style.animation =
             "showup 1s ease-in-out forwards";
@@ -44,18 +45,30 @@ const observer = new IntersectionObserver(
             "showup 1s 1.6s ease-in-out forwards";
           document.getElementById("marketSolution5").style.animation =
             "showup 1s 1.9s ease-in-out forwards";
+        } else if (entry.target.id === "ourWork") {
+          document.querySelector(
+            ".our-work .container > .text"
+          ).style.animation = "showup 1s ease-in-out forwards";
+          document.querySelector(".our-work .owl-carousel").style.animation =
+            "showup 1s 0.5s ease-in-out forwards";
         } else if (entry.target.id === "contactUs") {
           document.getElementById("contactUsRow1").style.animation =
             "showup 1s ease-in-out forwards";
           document.getElementById("contactUsRow2").style.animation =
             "showup 1s 0.5s ease-in-out forwards";
         }
-        observer.unobserve(entry.target);
+        headerLinks.forEach((li) => {
+          li.firstChild.classList.remove("active");
+        });
+        document
+          .querySelector(`a[href="#${entry.target.id}"]`)
+          .classList.add("active");
+        // observer.unobserve(entry.target);
       }
     });
   },
   {
-    threshold: 1,
+    threshold: threshold,
   }
 );
 
@@ -63,6 +76,7 @@ observer.observe(home);
 observer.observe(ourMission);
 observer.observe(whatWeDo);
 observer.observe(marketSolution);
+observer.observe(ourWork);
 observer.observe(contactUs);
 
 headerLinks.forEach((li, index) => {
@@ -84,3 +98,23 @@ headerMenu.onclick = () => {
   document.getElementById("thirdBar").classList.toggle("thirdBarClicked");
   headerList.classList.toggle("show-header-list");
 };
+
+$(document).ready(function () {
+  $(".owl-carousel").owlCarousel({
+    items: 1,
+    dots: true,
+    nav: true,
+    autoplay: true,
+    loop: true,
+    autoplayHoverPause: true,
+    margin: 5,
+    responsive: {
+      0: {
+        nav: false,
+      },
+      992: {
+        nav: true,
+      },
+    },
+  });
+});

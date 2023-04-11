@@ -2,6 +2,10 @@
   --main-transition: 0.7s;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 /* Start Global Rules */
 * {
   -webkit-box-sizing: border-box;
@@ -94,6 +98,57 @@ h1 {
   left: 0;
   bottom: 30px;
   z-index: 40;
+  width: 30px;
+}
+
+.scroll-dots {
+  position: fixed;
+  top: calc(50% - 122px);
+  right: 30px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 40px; */
+}
+
+.scroll-dots > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-dots a {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 10px;
+  height: 10px;
+  margin: 10px;
+  transition: all 0.5s;
+  display: inline-block;
+  z-index: 20;
+}
+
+.scroll-dots p {
+  position: absolute;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  top: 50%;
+  right: 35px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+}
+
+.scroll-dots a.active {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+}
+
+.scroll-dots div:hover a + p {
+  opacity: 1;
+  transform: translate(0, -50%);
 }
 
 .social-media i {

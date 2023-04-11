@@ -7,6 +7,7 @@ let marketSolution = document.getElementById("marketSolution");
 let contactUs = document.getElementById("contactUs");
 let ourWork = document.getElementById("ourWork");
 let headerLinks = Array.from(document.querySelectorAll(".header ul li"));
+let scrollDots = document.querySelectorAll(".scroll-dots a");
 let threshold = window.innerWidth < 768 ? 0 : 1;
 
 const observer = new IntersectionObserver(
@@ -60,9 +61,15 @@ const observer = new IntersectionObserver(
         headerLinks.forEach((li) => {
           li.firstChild.classList.remove("active");
         });
+        scrollDots.forEach((li) => {
+          li.classList.remove("active");
+        });
         document
           .querySelector(`a[href="#${entry.target.id}"]`)
           .classList.add("active");
+        document
+          .getElementById(`${entry.target.id}Dot`)
+          .parentElement.classList.add("active");
         // observer.unobserve(entry.target);
       }
     });

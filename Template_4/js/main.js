@@ -112,7 +112,7 @@ $(document).ready(function () {
     dots: true,
     nav: true,
     autoplay: true,
-    loop: true,
+    loop: false,
     autoplayHoverPause: true,
     margin: 5,
     responsive: {
